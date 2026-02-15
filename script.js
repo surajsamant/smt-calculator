@@ -1,51 +1,36 @@
-function calculateScript() {
+function calculate() {
 
-  let genre1 = document.getElementById("genre1").value;
-  let genre2 = document.getElementById("genre2").value;
-  let trend = parseInt(document.getElementById("trend").value);
-  let research = parseInt(document.getElementById("research").value);
+  let research = parseInt(document.getElementById("research").value) || 0;
+  let trend = parseInt(document.getElementById("trend").value) || 0;
 
-  let researchScore = research >= 90 ? 20 :
-                      research >= 80 ? 15 :
-                      research >= 70 ? 10 : 5;
+  let narrative = parseInt(document.getElementById("narrative").value) || 0;
+  let action = parseInt(document.getElementById("action").value) || 0;
+  let emotion = parseInt(document.getElementById("emotion").value) || 0;
+  let depth = parseInt(document.getElementById("depth").value) || 0;
 
-  let comboScore = (genre1 === "Action" && genre2 === "Adventure") ? 20 :
-                   (genre1 === "Horror" && genre2 === "Thriller") ? 20 :
-                   (genre1 === "Romance" && genre2 === "Drama") ? 20 :
-                   genre2 === "None" ? 10 : 15;
+  let director = parseInt(document.getElementById("director").value) || 0;
+  let lead = parseInt(document.getElementById("lead").value) || 0;
+  let tech = parseInt(document.getElementById("tech").value) || 0;
+  let visual = parseInt(document.getElementById("visual").value) || 0;
 
-  let total = trend + researchScore + comboScore;
+  let scriptScore = (research * 5) + (trend * 5) +
+                    narrative + action + emotion + depth;
 
-  let rating = total >= 55 ? "⭐ 5-Star Script Potential" :
-               total >= 45 ? "⭐ 4-Star Script" :
-               "⚠️ Weak Script";
+  let productionScore = director + lead + tech + visual;
 
-  document.getElementById("scriptResult").innerHTML =
-    "Score: " + total + "/60<br>" + rating;
-}
+  let total = scriptScore + productionScore;
 
-function calculateMovie() {
+  let message;
 
-  let actor = parseInt(document.getElementById("actor").value);
-  let director = parseInt(document.getElementById("director").value);
-  let budget = parseInt(document.getElementById("budget").value);
-  let marketing = parseInt(document.getElementById("marketing").value);
+  if (total >= 130)
+    message = "🔥 Blockbuster Potential";
+  else if (total >= 110)
+    message = "⭐ Strong Hit";
+  else if (total >= 90)
+    message = "👍 Safe Movie";
+  else
+    message = "⚠️ Risky Build";
 
-  let actorScore = actor >= 90 ? 20 :
-                   actor >= 80 ? 15 :
-                   actor >= 70 ? 10 : 5;
-
-  let directorScore = director >= 90 ? 20 :
-                      director >= 80 ? 15 :
-                      director >= 70 ? 10 : 5;
-
-  let total = actorScore + directorScore + budget + marketing;
-
-  let result = total >= 85 ? "🔥 Likely 10/10 Movie" :
-               total >= 75 ? "⭐ 9+ Rating Expected" :
-               total >= 65 ? "👍 Solid Movie" :
-               "⚠️ Risky Production";
-
-  document.getElementById("movieResult").innerHTML =
-    "Score: " + total + "/100<br>" + result;
+  document.getElementById("result").innerText =
+    "Overall Score: " + total + "\n" + message;
 }
