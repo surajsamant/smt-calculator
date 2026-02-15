@@ -1,24 +1,75 @@
-<select id="genre">...</select>
-<select id="audience">
-  <option>Adults</option>
-  <option>Teens</option>
-  <option>All-Age</option>
-</select>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SMT Optimizer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-<select id="theme">
-  <option>Survival</option>
-  <option>War</option>
-  <option>Virtual World</option>
-  <option>Love</option>
-  <option>Mystery</option>
-</select>
+<div class="wrapper">
 
-<select id="scale">
-  <option value="small">small</option>
-  <option value="medium">medium</option>
-  <option value="large">large</option>
-</select>
+  <h1>🎬 Super Movie Tycoon Optimizer</h1>
 
-<button onclick="optimize()">Generate Optimal Build</button>
+  <div class="card">
 
-<div id="output"></div>
+    <h2>Configuration</h2>
+
+    <div class="grid">
+
+      <div>
+        <label>Genre</label>
+        <select id="genre">
+          <option>Action</option>
+          <option>Horror</option>
+          <option>Romance</option>
+          <option>Drama</option>
+          <option>Comedy</option>
+          <option>Sci-Fi</option>
+        </select>
+      </div>
+
+      <div>
+        <label>Audience</label>
+        <select id="audience">
+          <option>Adults</option>
+          <option>Teens</option>
+          <option>All-Age</option>
+        </select>
+      </div>
+
+      <div>
+        <label>Theme</label>
+        <select id="theme">
+          <option>Survival</option>
+          <option>War</option>
+          <option>Virtual World</option>
+          <option>Love</option>
+          <option>Mystery</option>
+        </select>
+      </div>
+
+      <div>
+        <label>Film Scale</label>
+        <select id="scale">
+          <option value="small">Small</option>
+          <option value="medium">Medium</option>
+          <option value="large">Large</option>
+        </select>
+      </div>
+
+    </div>
+
+    <button onclick="optimize()">Generate Optimal Build</button>
+
+  </div>
+
+  <div class="card" id="outputCard">
+    <h2>Optimal Distribution</h2>
+    <div id="output">Select configuration and generate.</div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
