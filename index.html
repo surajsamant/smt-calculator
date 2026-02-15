@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SMT Pro Studio Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>🎬 Super Movie Tycoon Pro Studio</h1>
+
+<div class="tabs">
+  <button onclick="showTab('script')">📝 Script Lab</button>
+  <button onclick="showTab('movie')">🎥 Movie Lab</button>
+</div>
+
+<!-- SCRIPT LAB -->
+<div id="script" class="tab">
+
+  <h2>Script Creation</h2>
+
+  <label>Genre Trend:</label>
+  <select id="scriptTrend">
+    <option value="20">Strong</option>
+    <option value="15">Medium</option>
+    <option value="10">Weak</option>
+  </select>
+
+  <label>Theme Compatibility:</label>
+  <select id="theme">
+    <option value="20">Perfect Match</option>
+    <option value="15">Good</option>
+    <option value="10">Average</option>
+  </select>
+
+  <label>Research Level (0–100):</label>
+  <input type="number" id="research">
+
+  <button onclick="calculateScript()">Generate Script Score</button>
+
+  <h3 id="scriptResult"></h3>
+
+</div>
+
+<!-- MOVIE LAB -->
+<div id="movie" class="tab" style="display:none;">
+
+  <h2>Movie Production</h2>
+
+  <label>Genre Compatibility:</label>
+  <select id="genreCombo">
+    <option value="20">Perfect Combo</option>
+    <option value="15">Good Combo</option>
+    <option value="10">Risky Combo</option>
+  </select>
+
+  <label>Main Actor Skill:</label>
+  <input type="number" id="actor">
+
+  <label>Director Skill:</label>
+  <input type="number" id="director">
+
+  <label>Production Budget Efficiency:</label>
+  <select id="budget">
+    <option value="20">Perfectly Balanced</option>
+    <option value="15">Slightly Off</option>
+    <option value="10">Poor Allocation</option>
+  </select>
+
+  <label>Marketing Strategy:</label>
+  <select id="marketing">
+    <option value="20">Optimized</option>
+    <option value="15">Moderate</option>
+    <option value="10">Weak</option>
+  </select>
+
+  <button onclick="calculateMovie()">Generate Movie Score</button>
+
+  <h3 id="movieResult"></h3>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

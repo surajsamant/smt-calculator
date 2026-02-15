@@ -1,0 +1,16 @@
+.tabs button {
+  margin: 5px;
+  padding: 10px;
+  background: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.tab {
+  background: #222;
+  padding: 20px;
+  width: 350px;
+  margin: auto;
+  border-radius: 10px;
+}
