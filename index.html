@@ -1,83 +1,63 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SMT Pro Studio</title>
+  <title>SMT Movie Helper</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-  <h1>🎬 SMT Pro Studio Dashboard</h1>
-</header>
+<h1>🎬 Super Movie Tycoon Helper</h1>
 
-<div class="dashboard">
+<div class="container">
 
-  <!-- SCRIPT SECTION -->
-  <div class="card">
-    <h2>📝 Script Development</h2>
+<h2>📝 Script Section</h2>
 
-    <label>Primary Genre</label>
-    <select id="genre1">
-      <option>Action</option>
-      <option>Drama</option>
-      <option>Horror</option>
-      <option>Romance</option>
-      <option>Sci-Fi</option>
-      <option>Comedy</option>
-    </select>
+<label>Primary Genre</label>
+<select id="genre">
+  <option>Action</option>
+  <option>Drama</option>
+  <option>Horror</option>
+  <option>Romance</option>
+  <option>Comedy</option>
+  <option>Sci-Fi</option>
+</select>
 
-    <label>Secondary Genre</label>
-    <select id="genre2">
-      <option>None</option>
-      <option>Adventure</option>
-      <option>Thriller</option>
-      <option>Drama</option>
-      <option>Fantasy</option>
-    </select>
+<label>Research Level (1–10)</label>
+<input type="number" id="research" min="1" max="10">
 
-    <label>Trend Strength</label>
-    <select id="trend">
-      <option value="20">Strong</option>
-      <option value="15">Medium</option>
-      <option value="10">Weak</option>
-    </select>
+<label>Trend Strength (1–3)</label>
+<input type="number" id="trend" min="1" max="3">
 
-    <label>Research Level (0–100)</label>
-    <input type="number" id="research">
+<hr>
 
-    <button onclick="calculateScript()">Analyze Script</button>
+<h2>✍️ Writing Focus (1–10 each)</h2>
 
-    <div class="result" id="scriptResult"></div>
-  </div>
+<label>Narrative</label><input type="number" id="narrative" min="1" max="10">
+<label>Action</label><input type="number" id="action" min="1" max="10">
+<label>Emotion</label><input type="number" id="emotion" min="1" max="10">
+<label>Depth</label><input type="number" id="depth" min="1" max="10">
 
-  <!-- MOVIE SECTION -->
-  <div class="card">
-    <h2>🎥 Production Phase</h2>
+<hr>
 
-    <label>Main Actor Skill</label>
-    <input type="number" id="actor">
+<h2>🎥 Production Section</h2>
 
-    <label>Director Skill</label>
-    <input type="number" id="director">
+<label>Director Skill (1–10)</label>
+<input type="number" id="director" min="1" max="10">
 
-    <label>Budget Allocation</label>
-    <select id="budget">
-      <option value="20">Optimized</option>
-      <option value="15">Balanced</option>
-      <option value="10">Poor</option>
-    </select>
+<label>Lead Actor Skill (1–10)</label>
+<input type="number" id="lead" min="1" max="10">
 
-    <label>Marketing Intensity</label>
-    <select id="marketing">
-      <option value="20">High</option>
-      <option value="15">Medium</option>
-      <option value="10">Low</option>
-    </select>
+<label>Shooting Tech (1–10)</label>
+<input type="number" id="tech" min="1" max="10">
 
-    <button onclick="calculateMovie()">Predict Movie</button>
+<label>Visual Focus (1–10)</label>
+<input type="number" id="visual" min="1" max="10">
 
-    <div class="result" id="movieResult"></div>
-  </div>
+<br><br>
+
+<button onclick="calculate()">Analyze Movie</button>
+
+<h2 id="result"></h2>
 
 </div>
 
