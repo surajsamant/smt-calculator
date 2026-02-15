@@ -1,81 +1,83 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SMT Pro Studio Calculator</title>
+  <title>SMT Pro Studio</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1>🎬 Super Movie Tycoon Pro Studio</h1>
+<header>
+  <h1>🎬 SMT Pro Studio Dashboard</h1>
+</header>
 
-<div class="tabs">
-  <button onclick="showTab('script')">📝 Script Lab</button>
-  <button onclick="showTab('movie')">🎥 Movie Lab</button>
-</div>
+<div class="dashboard">
 
-<!-- SCRIPT LAB -->
-<div id="script" class="tab">
+  <!-- SCRIPT SECTION -->
+  <div class="card">
+    <h2>📝 Script Development</h2>
 
-  <h2>Script Creation</h2>
+    <label>Primary Genre</label>
+    <select id="genre1">
+      <option>Action</option>
+      <option>Drama</option>
+      <option>Horror</option>
+      <option>Romance</option>
+      <option>Sci-Fi</option>
+      <option>Comedy</option>
+    </select>
 
-  <label>Genre Trend:</label>
-  <select id="scriptTrend">
-    <option value="20">Strong</option>
-    <option value="15">Medium</option>
-    <option value="10">Weak</option>
-  </select>
+    <label>Secondary Genre</label>
+    <select id="genre2">
+      <option>None</option>
+      <option>Adventure</option>
+      <option>Thriller</option>
+      <option>Drama</option>
+      <option>Fantasy</option>
+    </select>
 
-  <label>Theme Compatibility:</label>
-  <select id="theme">
-    <option value="20">Perfect Match</option>
-    <option value="15">Good</option>
-    <option value="10">Average</option>
-  </select>
+    <label>Trend Strength</label>
+    <select id="trend">
+      <option value="20">Strong</option>
+      <option value="15">Medium</option>
+      <option value="10">Weak</option>
+    </select>
 
-  <label>Research Level (0–100):</label>
-  <input type="number" id="research">
+    <label>Research Level (0–100)</label>
+    <input type="number" id="research">
 
-  <button onclick="calculateScript()">Generate Script Score</button>
+    <button onclick="calculateScript()">Analyze Script</button>
 
-  <h3 id="scriptResult"></h3>
+    <div class="result" id="scriptResult"></div>
+  </div>
 
-</div>
+  <!-- MOVIE SECTION -->
+  <div class="card">
+    <h2>🎥 Production Phase</h2>
 
-<!-- MOVIE LAB -->
-<div id="movie" class="tab" style="display:none;">
+    <label>Main Actor Skill</label>
+    <input type="number" id="actor">
 
-  <h2>Movie Production</h2>
+    <label>Director Skill</label>
+    <input type="number" id="director">
 
-  <label>Genre Compatibility:</label>
-  <select id="genreCombo">
-    <option value="20">Perfect Combo</option>
-    <option value="15">Good Combo</option>
-    <option value="10">Risky Combo</option>
-  </select>
+    <label>Budget Allocation</label>
+    <select id="budget">
+      <option value="20">Optimized</option>
+      <option value="15">Balanced</option>
+      <option value="10">Poor</option>
+    </select>
 
-  <label>Main Actor Skill:</label>
-  <input type="number" id="actor">
+    <label>Marketing Intensity</label>
+    <select id="marketing">
+      <option value="20">High</option>
+      <option value="15">Medium</option>
+      <option value="10">Low</option>
+    </select>
 
-  <label>Director Skill:</label>
-  <input type="number" id="director">
+    <button onclick="calculateMovie()">Predict Movie</button>
 
-  <label>Production Budget Efficiency:</label>
-  <select id="budget">
-    <option value="20">Perfectly Balanced</option>
-    <option value="15">Slightly Off</option>
-    <option value="10">Poor Allocation</option>
-  </select>
-
-  <label>Marketing Strategy:</label>
-  <select id="marketing">
-    <option value="20">Optimized</option>
-    <option value="15">Moderate</option>
-    <option value="10">Weak</option>
-  </select>
-
-  <button onclick="calculateMovie()">Generate Movie Score</button>
-
-  <h3 id="movieResult"></h3>
+    <div class="result" id="movieResult"></div>
+  </div>
 
 </div>
 
