@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SMT Optimizer</title>
+  <title>SMT Affinity Optimizer</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,48 +12,59 @@
 
   <div class="card">
 
-    <h2>Configuration</h2>
-
     <div class="grid">
 
       <div>
-        <label>Genre</label>
-        <select id="genre">
+        <label>Primary Genre</label>
+        <select id="primary">
           <option>Action</option>
           <option>Horror</option>
           <option>Romance</option>
-          <option>Drama</option>
           <option>Comedy</option>
+          <option>Drama</option>
           <option>Sci-Fi</option>
+          <option>Crime</option>
+          <option>Adventure</option>
+          <option>Animation</option>
         </select>
       </div>
 
       <div>
-        <label>Audience</label>
-        <select id="audience">
-          <option>Adults</option>
-          <option>Teens</option>
-          <option>All-Age</option>
+        <label>Secondary Genre</label>
+        <select id="secondary">
+          <option>Action</option>
+          <option>Horror</option>
+          <option>Romance</option>
+          <option>Comedy</option>
+          <option>Drama</option>
+          <option>Sci-Fi</option>
+          <option>Crime</option>
+          <option>Adventure</option>
+          <option>Animation</option>
         </select>
       </div>
 
       <div>
         <label>Theme</label>
         <select id="theme">
-          <option>Survival</option>
-          <option>War</option>
-          <option>Virtual World</option>
-          <option>Love</option>
-          <option>Mystery</option>
+          <option>Alien</option>
+          <option>Disaster</option>
+          <option>Dystopia</option>
+          <option>Superhero</option>
+          <option>Wedding</option>
+          <option>Serial Killer</option>
+          <option>Detective</option>
+          <option>Magic</option>
+          <option>Space</option>
         </select>
       </div>
 
       <div>
-        <label>Film Scale</label>
-        <select id="scale">
-          <option value="small">Small</option>
-          <option value="medium">Medium</option>
-          <option value="large">Large</option>
+        <label>Age Rating</label>
+        <select id="age">
+          <option>PG</option>
+          <option>PG-13</option>
+          <option>R</option>
         </select>
       </div>
 
@@ -63,8 +74,8 @@
 
   </div>
 
-  <div class="card" id="outputCard">
-    <h2>Optimal Distribution</h2>
+  <div class="card result-card">
+    <h2>Optimization Result</h2>
     <div id="output">Select configuration and generate.</div>
   </div>
 
