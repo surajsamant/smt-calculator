@@ -5,40 +5,39 @@ body {
   color: white;
 }
 
-header {
-  background: #111;
-  padding: 20px;
-  text-align: center;
-  font-size: 22px;
-  border-bottom: 2px solid red;
+.wrapper {
+  max-width: 900px;
+  margin: auto;
+  padding: 40px;
 }
 
-.dashboard {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  padding: 40px;
-  flex-wrap: wrap;
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
 }
 
 .card {
-  background: #1c1c1c;
+  background: #1e1e1e;
   padding: 25px;
-  width: 350px;
   border-radius: 12px;
+  margin-bottom: 25px;
   box-shadow: 0 0 15px rgba(255,0,0,0.2);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
 }
 
 label {
   display: block;
-  margin-top: 10px;
-  font-size: 14px;
+  margin-bottom: 5px;
 }
 
-input, select {
+select {
   width: 100%;
   padding: 8px;
-  margin-top: 5px;
   background: #2a2a2a;
   color: white;
   border: 1px solid #444;
@@ -46,13 +45,13 @@ input, select {
 }
 
 button {
-  margin-top: 15px;
-  padding: 10px;
+  margin-top: 20px;
   width: 100%;
+  padding: 12px;
   background: red;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
   font-weight: bold;
 }
@@ -61,9 +60,7 @@ button:hover {
   background: darkred;
 }
 
-.result {
+#output {
   margin-top: 15px;
-  padding: 10px;
-  background: #111;
-  border-radius: 5px;
+  line-height: 1.6;
 }
